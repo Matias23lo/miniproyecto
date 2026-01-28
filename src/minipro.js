@@ -1,14 +1,15 @@
 
+
 var SistemaEstudiantes = /** @class */ (function () {
     function SistemaEstudiantes() {
         this.estudiantes = [];
     }
-    // Registrar estudiante
+   
     SistemaEstudiantes.prototype.registrar = function (estudiante) {
         this.estudiantes.push(estudiante);
         console.log("✅ Estudiante registrado correctamente");
     };
-    // Listar estudiantes
+    
     SistemaEstudiantes.prototype.listar = function () {
         if (this.estudiantes.length === 0) {
             console.log("⚠️ No hay estudiantes registrados");
@@ -20,11 +21,11 @@ var SistemaEstudiantes = /** @class */ (function () {
             console.log("ID: ".concat(est.id, " | Nombre: ").concat(est.nombre, " | Edad: ").concat(est.edad, " | Carrera: ").concat(est.carrera, " | Activo: ").concat(est.activo));
         }
     };
-    // Buscar estudiante por ID
+    
     SistemaEstudiantes.prototype.buscarPorId = function (id) {
         return this.estudiantes.find(function (est) { return est.id === id; });
     };
-    // Actualizar estudiante
+   
     SistemaEstudiantes.prototype.actualizar = function (id, nuevosDatos) {
         var estudiante = this.buscarPorId(id);
         if (estudiante) {
@@ -37,7 +38,9 @@ var SistemaEstudiantes = /** @class */ (function () {
     };
     return SistemaEstudiantes;
 }());
-
+// ============================
+// FUNCIONES
+// ============================
 function crearEstudiante(id, nombre, edad, carrera) {
     return {
         id: id,
@@ -57,10 +60,10 @@ sistema.listar();
 
 var buscado = sistema.buscarPorId(2);
 if (buscado) {
-    console.log(" Estudiante encontrado:", buscado);
+    console.log("🔍 Estudiante encontrado:", buscado);
 }
 else {
-    console.log(" Estudiante no encontrado");
+    console.log("❌ Estudiante no encontrado");
 }
 
 sistema.actualizar(3, { edad: 21, activo: false });
