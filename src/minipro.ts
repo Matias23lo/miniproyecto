@@ -13,17 +13,17 @@ class SistemaEstudiantes {
  
   registrar(estudiante: Estudiante): void {
     this.estudiantes.push(estudiante);
-    console.log("✅ Estudiante registrado correctamente");
+    console.log(" Estudiante registrado correctamente");
   }
 
  
   listar(): void {
     if (this.estudiantes.length === 0) {
-      console.log("⚠️ No hay estudiantes registrados");
+      console.log(" No hay estudiantes registrados");
       return;
     }
 
-    console.log("📋 Lista de estudiantes:");
+    console.log(" Lista de estudiantes:");
     for (const est of this.estudiantes) {
       console.log(
         `ID: ${est.id} | Nombre: ${est.nombre} | Edad: ${est.edad} | Carrera: ${est.carrera} | Activo: ${est.activo}`
@@ -41,9 +41,9 @@ class SistemaEstudiantes {
 
     if (estudiante) {
       Object.assign(estudiante, nuevosDatos);
-      console.log("✏️ Estudiante actualizado correctamente");
+      console.log(" Estudiante actualizado correctamente");
     } else {
-      console.log("❌ Estudiante no encontrado");
+      console.log(" Estudiante no encontrado");
     }
   }
 }
@@ -76,9 +76,9 @@ sistema.listar();
 
 const buscado = sistema.buscarPorId(2);
 if (buscado) {
-  console.log("🔍 Estudiante encontrado:", buscado);
+  console.log(" Estudiante encontrado:", buscado);
 } else {
-  console.log("❌ Estudiante no encontrado");
+  console.log(" Estudiante no encontrado");
 }
 
 sistema.actualizar(3, { edad: 21, activo: false });

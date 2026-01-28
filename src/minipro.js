@@ -1,6 +1,4 @@
-// ============================
-// CLASE
-// ============================
+
 var SistemaEstudiantes = /** @class */ (function () {
     function SistemaEstudiantes() {
         this.estudiantes = [];
@@ -39,9 +37,7 @@ var SistemaEstudiantes = /** @class */ (function () {
     };
     return SistemaEstudiantes;
 }());
-// ============================
-// FUNCIONES
-// ============================
+
 function crearEstudiante(id, nombre, edad, carrera) {
     return {
         id: id,
@@ -51,24 +47,22 @@ function crearEstudiante(id, nombre, edad, carrera) {
         activo: true
     };
 }
-// ============================
-// PROGRAMA PRINCIPAL
-// ============================
+
 var sistema = new SistemaEstudiantes();
-// Datos de prueba
+
 sistema.registrar(crearEstudiante(1, "Andrés", 18, "Ingeniería"));
 sistema.registrar(crearEstudiante(2, "María", 20, "Medicina"));
 sistema.registrar(crearEstudiante(3, "Juan", 19, "Derecho"));
 sistema.listar();
-// Buscar estudiante
+
 var buscado = sistema.buscarPorId(2);
 if (buscado) {
-    console.log("🔍 Estudiante encontrado:", buscado);
+    console.log(" Estudiante encontrado:", buscado);
 }
 else {
-    console.log("❌ Estudiante no encontrado");
+    console.log(" Estudiante no encontrado");
 }
-// Actualizar estudiante
+
 sistema.actualizar(3, { edad: 21, activo: false });
-// Listar nuevamente
+
 sistema.listar();
